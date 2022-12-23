@@ -1,0 +1,35 @@
+{
+  "name": "keith-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "buildWasm": "node wasm/build.js",
+    "buildDev": "node webpack/run.js --dev --build",
+    "buildProd": "node webpack/run.js --prod --build",
+    "start": "node webpack/run.js --dev --start",
+    "startProd": "node webpack/run.js --prodTest --start"
+  },
+  "author": "KeithWang",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/plugin-transform-react-jsx": "^7.19.0",
+    "@babel/preset-env": "^7.19.4",
+    "babel-loader": "^8.2.5",
+    "compression-webpack-plugin": "^10.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "json5": "^2.2.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "toml": "^3.0.0",
+    "webpack": "^5.74.0",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0",
+    "yamljs": "^0.3.0"
+  },
+  "dependencies": {
+    "@keithwang/keith-babel-jsx": "^1.0.1",
+    "@keithwang/keith-core": "^1.0.4"
+  }
+}
