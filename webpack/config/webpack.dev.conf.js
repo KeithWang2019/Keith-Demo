@@ -10,7 +10,6 @@ const webpackConfig = webpackMerge.merge(config, {
   optimization: {
     minimize: false,
   },
-  devtool: "inline-source-map",
   plugins: [
     new webpack.DefinePlugin({
       "process.env": require(rootPath.getPath("env", "dev.env")),

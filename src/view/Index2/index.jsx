@@ -1,6 +1,6 @@
-import { View } from "@keithwang/keith-core"
+import { View } from "@keithwang/keith-core";
 
-import SectionI from "./SectionI";
+import SectionI from "./parts/SectionI";
 
 class Index2 extends View {
   index = 0;
@@ -67,18 +67,20 @@ class Index2 extends View {
           value="打日志"
           onClick={() => this.handleVConsole()}
         />
-        {this.items.map((item) => {
-          return (
-            <SectionI
-              key={item}
-              title={item}
-              ref={(r) => (this.refItems = r)}
-              onDelSelf={(key) => this.handleDelSectionLevelOne(key)}
-              onUpSelf={(key) => this.handleUpSectionLevelOne(key)}
-              onDownSelf={(key) => this.handleDownSectionLevelOne(key)}
-            ></SectionI>
-          );
-        })}
+        <div>
+          {this.items.map((item) => {
+            return (
+              <SectionI
+                key={item}
+                title={item}
+                ref={(r) => (this.refItems = r)}
+                onDelSelf={(key) => this.handleDelSectionLevelOne(key)}
+                onUpSelf={(key) => this.handleUpSectionLevelOne(key)}
+                onDownSelf={(key) => this.handleDownSectionLevelOne(key)}
+              ></SectionI>
+            );
+          })}
+        </div>
       </div>
     );
   }

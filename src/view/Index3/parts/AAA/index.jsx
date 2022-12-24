@@ -1,6 +1,6 @@
 import { View } from "@keithwang/keith-core"
 
-import BBB from "./BBB";
+import BBB from "./parts/BBB";
 
 class AAA extends View {
   count = 1;

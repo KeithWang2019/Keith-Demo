@@ -1,29 +1,19 @@
 import { View } from "@keithwang/keith-core"
 
-class SectionI extends View {
+class SectionII extends View {
   elInputAdd = null;
 
   constructor(option) {
     super(option);
   }
 
-  handleAddSectionLevelTwo() {
-    console.log("增加动态节第二层");
-  }
-
   render() {
     return (
-      <div style={{ border: "2px solid blue" }}>
-        <h2 style={{ color: "blue" }}>动态节第一层{this.$key}</h2>
+      <div style={{ border: "2px solid yello" }}>
+        <h2 style={{ color: "blue" }}>动态节第一层{this.$key}</h2>        
         <input
           type="button"
-          value="增加动态节第二层"
-          ref={(r) => (this.elInputAdd = r)}
-          onClick={() => this.handleAddSectionLevelTwo()}
-        />
-        <input
-          type="button"
-          value="删除动态节第一层"
+          value="删除动态节第二层"
           onClick={() => this.$emit("onDelSelf", this.$key)}
         />
         <input
@@ -41,4 +31,4 @@ class SectionI extends View {
   }
 }
 
-export default SectionI;
+export default SectionII;

@@ -1,6 +1,7 @@
-import { View } from "@keithwang/keith-core"
+import { View } from "@keithwang/keith-core";
 
-import AAA from "./AAA/index.jsx";
+import AAA from "./parts/AAA/index.jsx";
+import "./assets/index.scss";
 
 class Index3 extends View {
   aaa = [];
@@ -18,7 +19,7 @@ class Index3 extends View {
 
   handleClickSub() {
     this.aaa2.pop();
-    this.update();  
+    this.update();
   }
 
   render() {
