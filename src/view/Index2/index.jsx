@@ -1,4 +1,4 @@
-import { View } from "@keithwang/keith-core";
+import { ToolKit, View } from "@keithwang/keith-core";
 
 import SectionI from "./parts/SectionI";
 

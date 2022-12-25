@@ -1,10 +1,11 @@
 import { View } from "@keithwang/keith-core";
+import SectionII from "./parts/SectionII";
 
 class SectionI extends View {
   elInputAdd = null;
 
   index = 0;
-  items = ["-1"];
+  items = [];
 
   constructor(option) {
     super(option);
@@ -41,18 +42,18 @@ class SectionI extends View {
           value="下移"
           onClick={() => this.$emit("onDownSelf", this.$key)}
         />
-        {/* {this.items.map((item) => {
+        {this.items.map((item) => {
           return (
-            <SectionI
+            <SectionII
               key={item}
               title={item}
               ref={(r) => (this.refItems = r)}
               onDelSelf={(key) => this.handleDelSectionLevelOne(key)}
               onUpSelf={(key) => this.handleUpSectionLevelOne(key)}
               onDownSelf={(key) => this.handleDownSectionLevelOne(key)}
-            ></SectionI>
+            ></SectionII>
           );
-        })} */}
+        })}
       </div>
     );
   }
