@@ -1,9 +1,12 @@
 .Index2 {
   border: 5px solid #4d7186;
   border-radius: 10px;
-  color: #4d7186;  
+  color: #4d7186;
+  padding: 5px;
 
-  input {
+  input,
+  textarea {
     color: #4d7186;
+    border-color: #4d7186;
   }
 }

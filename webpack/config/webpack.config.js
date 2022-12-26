@@ -80,6 +80,19 @@ module.exports = {
             },
           },
           {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                config: rootPath.getPath(
+                  "webpack",
+                  "config",
+                  "postcss.config.js"
+                ),
+              },
+            },
+          },
+          {
             loader: "sass-loader",
             options: {
               sourceMap: true,
@@ -97,6 +110,19 @@ module.exports = {
             options: {
               sourceMap: true,
               modules: "global",
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                sourceMap: true,
+                config: rootPath.getPath(
+                  "webpack",
+                  "config",
+                  "postcss.config.js"
+                ),
+              },
             },
           },
         ],
@@ -166,7 +192,7 @@ module.exports = {
     hot: true,
     allowedHosts: ["0.0.0.0", "localhost"],
     open: true,
-    port: 80    
+    port: 80,
   },
   performance: {
     maxEntrypointSize: 1200000, // 入口点代表将在特定条目的初始加载时间期间使用的所有资产。此选项控制 webpack 何时应根据最大入口点大小（以字节为单位）发出性能提示。

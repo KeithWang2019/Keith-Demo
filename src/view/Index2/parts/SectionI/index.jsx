@@ -9,6 +9,9 @@ class SectionI extends View {
 
   index = 0;
   items = [];
+  refItems = [];
+
+  fieldClassName = null;
 
   constructor(option) {
     super(option);
@@ -52,10 +55,20 @@ class SectionI extends View {
     }
   }
 
+  getJson() {
+    let json = { className: this.fieldClassName, child: [] };
+    for (let i = 0; i < this.refItems.length; i++) {
+      json.child.push({
+        child: this.refItems[i].getJson(),
+      });
+    }
+    return json;
+  }
+
   render() {
     return (
       <div className="SectionI">
-        <h2>动态节第一层{this.$key}</h2>
+        <h2>[{this.$key}]动态节第一层</h2>
         <input
           type="button"
           value="增加动态节第二层"
@@ -67,6 +80,7 @@ class SectionI extends View {
           value="删除动态节第一层"
           onClick={() => this.$emit("onDelSelf", this.$key)}
         />
+        <br />
         <input
           type="button"
           value="上移"
@@ -77,6 +91,16 @@ class SectionI extends View {
           value="下移"
           onClick={() => this.$emit("onDownSelf", this.$key)}
         />
+        <div style={{ padding: "5px" }}>
+          <div className="field-section">
+            <span>班级：</span>
+            <input
+              type="text"
+              value={this.fieldClassName}
+              onChange={(event) => (this.fieldClassName = event.target.value)}
+            />
+          </div>
+        </div>
         {this.items.map((item) => {
           return (
             <SectionII

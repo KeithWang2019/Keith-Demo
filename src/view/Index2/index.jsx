@@ -21,6 +21,7 @@ class Index2 extends View {
 
   handleVConsole() {
     console.log(this.refItems);
+    console.log(this.getJson());
   }
 
   handleDelSectionLevelOne(key) {
@@ -55,10 +56,18 @@ class Index2 extends View {
     }
   }
 
+  getJson() {
+    let json = [];
+    for (let i = 0; i < this.refItems.length; i++) {
+      json.push(this.refItems[i].getJson());
+    }
+    return json;
+  }
+
   render() {
     return (
       <div className="Index2">
-        <h2>多节增删改查上下移动</h2>
+        <h2>#多节增删改查上下移动</h2>
         <input
           type="button"
           value="增加动态节第一层"

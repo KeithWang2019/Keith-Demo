@@ -1,0 +1,36 @@
+html {
+  font-size: 12px;
+  font-family: "Microsoft YaHei";
+
+  input,
+  textarea {
+    font-size: 12px;
+    border: 1px solid #333;
+    margin: 0 2px 2px 0;
+    font-family: "Microsoft YaHei";
+  }
+
+  input {
+    height: 20px;
+  }
+
+  textarea {
+    height: 40px;
+  }
+
+  .field-section {
+    margin-top: 5px;
+
+    span {
+      vertical-align: top;
+    }
+
+    input[type="text"],
+    textarea {
+      box-sizing: border-box;
+      width: 240px;
+      padding: 2px;
+      resize: none;
+    }
+  }
+}
