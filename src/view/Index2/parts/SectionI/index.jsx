@@ -1,4 +1,7 @@
 import { View } from "@keithwang/keith-core";
+
+import "./assets/index.scss";
+
 import SectionII from "./parts/SectionII";
 
 class SectionI extends View {
@@ -17,10 +20,42 @@ class SectionI extends View {
     this.update();
   }
 
+  handleDelSectionLevelTwo(key) {
+    console.log("删除动态节第二层", key);
+    this.items = this.items.filter((item) => {
+      return item !== key;
+    });
+    this.update();
+  }
+
+  handleUpSectionLevelTwo(key) {
+    console.log("上移动态节第二层", key);
+    let currentIndex = this.items.findIndex((item) => item == key);
+    if (currentIndex > 0) {
+      let currentItem = this.items[currentIndex];
+      let upItem = this.items[currentIndex - 1];
+      this.items[currentIndex] = upItem;
+      this.items[currentIndex - 1] = currentItem;
+      this.update();
+    }
+  }
+
+  handleDownSectionLevelTwo(key) {
+    console.log("下移动态节第二层", key);
+    let currentIndex = this.items.findIndex((item) => item == key);
+    if (currentIndex + 1 < this.items.length) {
+      let currentItem = this.items[currentIndex];
+      let downItem = this.items[currentIndex + 1];
+      this.items[currentIndex] = downItem;
+      this.items[currentIndex + 1] = currentItem;
+      this.update();
+    }
+  }
+
   render() {
     return (
-      <div style={{ border: "2px solid blue" }}>
-        <h2 style={{ color: "blue" }}>动态节第一层{this.$key}</h2>
+      <div className="SectionI">
+        <h2>动态节第一层{this.$key}</h2>
         <input
           type="button"
           value="增加动态节第二层"
@@ -48,9 +83,9 @@ class SectionI extends View {
               key={item}
               title={item}
               ref={(r) => (this.refItems = r)}
-              onDelSelf={(key) => this.handleDelSectionLevelOne(key)}
-              onUpSelf={(key) => this.handleUpSectionLevelOne(key)}
-              onDownSelf={(key) => this.handleDownSectionLevelOne(key)}
+              onDelSelf={(key) => this.handleDelSectionLevelTwo(key)}
+              onUpSelf={(key) => this.handleUpSectionLevelTwo(key)}
+              onDownSelf={(key) => this.handleDownSectionLevelTwo(key)}
             ></SectionII>
           );
         })}

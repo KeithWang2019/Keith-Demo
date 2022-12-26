@@ -1,5 +1,7 @@
 import { View } from "@keithwang/keith-core"
 
+import "./assets/index.scss";
+
 class SectionII extends View {
   elInputAdd = null;
 
@@ -9,8 +11,8 @@ class SectionII extends View {
 
   render() {
     return (
-      <div style={{ border: "2px solid yello" }}>
-        <h2 style={{ color: "blue" }}>动态节第一层{this.$key}</h2>        
+      <div className="SectionII">
+        <h2>动态节第一层{this.$key}</h2>        
         <input
           type="button"
           value="删除动态节第二层"

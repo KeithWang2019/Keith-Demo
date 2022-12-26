@@ -1,5 +1,7 @@
 import { ToolKit, View } from "@keithwang/keith-core";
 
+import "./assets/index.scss";
+
 import SectionI from "./parts/SectionI";
 
 class Index2 extends View {
@@ -55,7 +57,7 @@ class Index2 extends View {
 
   render() {
     return (
-      <div style={{ border: "2px solid black" }}>
+      <div className="Index2">
         <h2>多节增删改查上下移动</h2>
         <input
           type="button"
