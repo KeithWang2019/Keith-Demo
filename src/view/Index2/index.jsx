@@ -6,21 +6,28 @@ import SectionI from "./parts/SectionI";
 
 class Index2 extends View {
   index = 0;
-  items = ["-1"];
+  items = ["1", "2", "3", "4", "5", "6", "7"];
   refItems = [];
+
+  fieldKeys1 = null;
+  fieldKeys2 = null;
 
   constructor(option) {
     super(option);
   }
 
+  onPreRender() {
+    this.fieldKeys2 = this.items.join(";");
+  }
+
   handleAddSectionLevelOne() {
     console.log("增加动态节第一层");
-    this.items.push(this.index++);
+    this.items.push((this.index++).toString());
     this.update();
   }
 
   handleVConsole() {
-    console.log(this.refItems);
+    // console.log(this.refItems);
     console.log(this.getJson());
   }
 
@@ -56,6 +63,19 @@ class Index2 extends View {
     }
   }
 
+  handleDelKeys() {
+    let keys = this.fieldKeys1.split(";");
+    this.items = this.items.filter((val) => !keys.includes(val));
+    console.log(this.items);
+    this.update();
+  }
+
+  handleSortKeys() {
+    let keys = this.fieldKeys2.split(";");
+    this.items = keys;
+    this.update();
+  }
+
   getJson() {
     let json = [];
     for (let i = 0; i < this.refItems.length; i++) {
@@ -78,6 +98,32 @@ class Index2 extends View {
           value="打日志"
           onClick={() => this.handleVConsole()}
         />
+        <div className="field-section">
+          <span>需要删除的keys，使用分号分隔：</span>
+          <input
+            type="text"
+            value={this.fieldKeys1}
+            onChange={(event) => (this.fieldKeys1 = event.target.value)}
+          />
+          <input
+            type="button"
+            value="删除keys"
+            onClick={() => this.handleDelKeys()}
+          />
+        </div>
+        <div className="field-section">
+          <span>手动打乱顺序的keys，使用分号分隔：</span>
+          <input
+            type="text"
+            value={this.fieldKeys2}
+            onChange={(event) => (this.fieldKeys2 = event.target.value)}
+          />
+          <input
+            type="button"
+            value="随机keys"
+            onClick={() => this.handleSortKeys()}
+          />
+        </div>
         <div>
           {this.items.map((item) => {
             return (
