@@ -27,8 +27,8 @@ class Index2 extends View {
   }
 
   handleVConsole() {
-    // console.log(this.refItems);
-    console.log(this.getJson());
+    console.log(this.refItems);
+    // console.log(this.getJson());
   }
 
   handleDelSectionLevelOne(key) {
@@ -63,14 +63,7 @@ class Index2 extends View {
     }
   }
 
-  handleDelKeys() {
-    let keys = this.fieldKeys1.split(";");
-    this.items = this.items.filter((val) => !keys.includes(val));
-    console.log(this.items);
-    this.update();
-  }
-
-  handleSortKeys() {
+  handleChangeKeys() {
     let keys = this.fieldKeys2.split(";");
     this.items = keys;
     this.update();
@@ -97,22 +90,9 @@ class Index2 extends View {
           type="button"
           value="打日志"
           onClick={() => this.handleVConsole()}
-        />
+        />        
         <div className="field-section">
-          <span>需要删除的keys，使用分号分隔：</span>
-          <input
-            type="text"
-            value={this.fieldKeys1}
-            onChange={(event) => (this.fieldKeys1 = event.target.value)}
-          />
-          <input
-            type="button"
-            value="删除keys"
-            onClick={() => this.handleDelKeys()}
-          />
-        </div>
-        <div className="field-section">
-          <span>手动打乱顺序的keys，使用分号分隔：</span>
+          <span>手动打乱顺序的keys，使用分号分隔：</span> 
           <input
             type="text"
             value={this.fieldKeys2}
@@ -120,11 +100,11 @@ class Index2 extends View {
           />
           <input
             type="button"
-            value="随机keys"
-            onClick={() => this.handleSortKeys()}
+            value="变化"
+            onClick={() => this.handleChangeKeys()}
           />
         </div>
-        <div>
+        <div className="deb">
           {this.items.map((item) => {
             return (
               <SectionI

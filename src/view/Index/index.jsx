@@ -1,4 +1,8 @@
-import { View }  from "@keithwang/keith-core"
+import { View } from "@keithwang/keith-core";
+
+import "./assets/index.scss";
+
+import Navbar from "@parts/Navbar";
 
 class Index extends View {
   constructor(option) {
@@ -9,9 +13,9 @@ class Index extends View {
 
   render() {
     return (
-      <div>
-        <div>1</div>
-        <div>1</div>
+      <div className="Index">
+        <Navbar></Navbar>
+        <div></div>
       </div>
     );
   }

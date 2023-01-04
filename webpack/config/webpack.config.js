@@ -35,6 +35,7 @@ module.exports = {
       "src/common": rootPath.getPath("src", "common"),
       "src/axios": rootPath.getPath("src", "axios"),
       "src/view": rootPath.getPath("src", "view"),
+      "@parts": rootPath.getPath("src", "common", "parts"),
     },
     extensions: [".js", ".jsx", ".css", ".scss"],
     fallback: {

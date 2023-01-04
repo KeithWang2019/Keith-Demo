@@ -12,13 +12,13 @@ const router = new Router({
       name: "Index",
       component: Index,
       containerId: "app",
+      default: true,
     },
     {
       path: "#/Index2",
       name: "Index2",
       component: Index2,
       containerId: "app",
-      default: true,
     },
     {
       path: "#/Index3",
