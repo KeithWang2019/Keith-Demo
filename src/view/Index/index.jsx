@@ -2,20 +2,30 @@ import { View } from "@keithwang/keith-core";
 
 import "./assets/index.scss";
 
-import Navbar from "@parts/Navbar";
+import NavigationBar from "@parts/NavigationBar";
+import QuickLaunchBar from "@parts/QuickLaunchBar";
 
 class Index extends View {
   constructor(option) {
     super(option);
   }
 
-  handleClick() {}
+  handleGoRoute(item) {
+    console.log(item);
+  }
 
   render() {
     return (
       <div className="Index">
-        <Navbar></Navbar>
-        <div></div>
+        <NavigationBar></NavigationBar>
+        <div className="container">
+          <QuickLaunchBar
+            onGoRoute={(item) => this.handleGoRoute(item)}
+          ></QuickLaunchBar>
+          <div className="content-iframe">
+            <iframe frameborder="0"></iframe>
+          </div>
+        </div>
       </div>
     );
   }
