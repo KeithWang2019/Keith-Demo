@@ -11,7 +11,6 @@ const router = new Router({
       path: "#/Index",
       name: "Index",
       component: Index,
-      containerId: "app",
       default: true,
     },
     {
