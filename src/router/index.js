@@ -8,22 +8,21 @@ const Index3 = () => import(/* webpackChunkName:"Index3" */ "src/view/Index3");
 const router = new Router({
   routes: [
     {
-      path: "#/Index",
+      path: "/",
       name: "Index",
       component: Index,
-      default: true,
     },
     {
-      path: "#/Index2",
+      path: "/Index2",
       name: "Index2",
       component: Index2,
-      containerId: "app",
+      containerId: "#app4",
     },
     {
-      path: "#/Index3",
+      path: "/Index3",
       name: "Index3",
       component: Index3,
-      containerId: "app",
+      containerId: "#app4",
     },
   ],
 });

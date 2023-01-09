@@ -2,8 +2,8 @@ import { View } from "@keithwang/keith-core";
 
 import "./assets/index.scss";
 
-import NavigationBar from "@parts/NavigationBar";
-import QuickLaunchBar from "@parts/QuickLaunchBar";
+import NavigationBar from "./parts/NavigationBar";
+import QuickLaunchBar from "./parts/QuickLaunchBar";
 
 class Index extends View {
   constructor(option) {
@@ -12,6 +12,7 @@ class Index extends View {
 
   handleGoRoute(item) {
     console.log(item);
+    
   }
 
   render() {
@@ -23,7 +24,8 @@ class Index extends View {
             onGoRoute={(item) => this.handleGoRoute(item)}
           ></QuickLaunchBar>
           <div className="content-iframe">
-            <iframe frameborder="0"></iframe>
+            {/* <iframe frameborder="0"></iframe> */}
+            <div id="app4"></div>
           </div>
         </div>
       </div>

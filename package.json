@@ -15,7 +15,7 @@
     "@babel/core": "^7.19.3",
     "@babel/plugin-transform-react-jsx": "^7.19.0",
     "@babel/preset-env": "^7.19.4",
-    "@keithwang/keith-babel-jsx": "^1.0.3",
+    "@keithwang/keith-babel-jsx": "^1.0.4",
     "babel-loader": "^8.2.5",
     "compression-webpack-plugin": "^10.0.0",
     "copy-webpack-plugin": "^11.0.0",
@@ -38,5 +38,10 @@
   "dependencies": {
     "@keithwang/keith-core": "^1.0.7",
     "axios": "^1.2.1"
-  }
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "not dead"
+  ]
 }

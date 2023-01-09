@@ -2,7 +2,17 @@
 
 html {
   font-size: 12px;
-  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+
+  body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    #app {
+      height: 100%;
+    }
+  }
 
   input,
   textarea {
