@@ -12,7 +12,8 @@ class Index extends View {
 
   handleGoRoute(item) {
     console.log(item);
-    
+    // console.log(this.$app.$Router);
+    this.$app.$Router.push({ url: item.url });
   }
 
   render() {

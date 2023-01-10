@@ -13,13 +13,13 @@ class QuickLaunchBar extends View {
         {
           title: "动态",
           icon: "icon-file",
-          url: "/",
+          url: "/Index2",
           selected: false,
         },
         {
           title: "标记",
           icon: "icon-file",
-          url: "/",
+          url: "/Index3",
           selected: false,
         },
         {
