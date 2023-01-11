@@ -25,7 +25,6 @@ class Index extends View {
             onGoRoute={(item) => this.handleGoRoute(item)}
           ></QuickLaunchBar>
           <div className="content-iframe">
-            {/* <iframe frameborder="0"></iframe> */}
             <div id="app4"></div>
           </div>
         </div>
