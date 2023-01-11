@@ -28,7 +28,7 @@ class Index2 extends View {
 
   handleVConsole() {
     console.log(this.refItems);
-    // console.log(this.getJson());
+    console.log(this.getJson());
   }
 
   handleDelSectionLevelOne(key) {
@@ -79,7 +79,7 @@ class Index2 extends View {
 
   render() {
     return (
-      <div className="Index2">
+      <div className="Index2">        
         <h2>#多节增删改查上下移动</h2>
         <input
           type="button"

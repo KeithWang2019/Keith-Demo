@@ -5,13 +5,13 @@ import "./assets/index.scss";
 class QuickLaunchBar extends View {
   items = [
     {
-      title: "项目信息",
+      title: "测试内容",
       icon: "icon-unknow",
       url: "/",
       selected: false,
       subItems: [
         {
-          title: "动态",
+          title: "多节增删改查上下移动",
           icon: "icon-file",
           url: "/Index2",
           selected: false,
@@ -31,7 +31,7 @@ class QuickLaunchBar extends View {
       ],
     },
     {
-      title: "内存分析",
+      title: "文档内容",
       icon: "icon-folder",
       url: "#",
       selected: false,
@@ -40,38 +40,6 @@ class QuickLaunchBar extends View {
           title: "对象数量",
           icon: "icon-file",
           url: "#/Index3",
-          selected: false,
-        },
-      ],
-    },
-    {
-      title: "议题",
-      icon: "icon-info",
-      url: "/",
-      selected: false,
-      subItems: [
-        {
-          title: "列表",
-          icon: "icon-file",
-          url: "/",
-          selected: false,
-        },
-        {
-          title: "看板",
-          icon: "icon-file",
-          url: "/",
-          selected: false,
-        },
-        {
-          title: "服务台",
-          icon: "icon-file",
-          url: "/",
-          selected: false,
-        },
-        {
-          title: "里程碑",
-          icon: "icon-file",
-          url: "/",
           selected: false,
         },
       ],
@@ -122,7 +90,10 @@ class QuickLaunchBar extends View {
                   }}
                   key={item.title}
                 >
-                  <a href="javascript:void(0)" onClick={() => this.handleGoRoute(item, null)}>
+                  <a
+                    href="javascript:void(0)"
+                    onClick={() => this.handleGoRoute(item, null)}
+                  >
                     <i className={"launch-item-icon iconfont " + item.icon}></i>
                     <span className="launch-item-name">{item.title}</span>
                   </a>
@@ -164,7 +135,10 @@ class QuickLaunchBar extends View {
                   }}
                   key={item.title}
                 >
-                  <a href="javascript:void(0)" onClick={() => this.handleGoRoute(item, null)}>
+                  <a
+                    href="javascript:void(0)"
+                    onClick={() => this.handleGoRoute(item, null)}
+                  >
                     <i className={"launch-item-icon iconfont " + item.icon}></i>
                     <span className="launch-item-name">{item.title}</span>
                   </a>
