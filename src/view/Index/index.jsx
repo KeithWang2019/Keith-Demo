@@ -8,9 +8,9 @@ class Index extends View {
   }
 
   handleDemo(item) {
-    alert("ok");
     // console.log(this.$app.$Router);
     // this.$app.$Router.push({ url: item.url });
+    document.location.href = "https://mall.11185.cn/h5/#/index";
   }
 
   render() {
@@ -19,7 +19,7 @@ class Index extends View {
         <input
           className="demo-button"
           type="button"
-          value="测试"
+          value="1. 跳转其他公众号网页"
           onClick={() => this.handleDemo()}
         />
       </div>
