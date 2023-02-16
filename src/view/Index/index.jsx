@@ -22,6 +22,18 @@ class Index extends View {
           value="1. 跳转其他公众号网页"
           onClick={() => this.handleDemo()}
         />
+        <a
+          className="weapp_text_link wx_tap_link"
+          style="font-size:17px;"
+          data-miniprogram-appid="wxc60292d1a49f32d3"
+          data-miniprogram-path="pages/index/index"
+          data-miniprogram-nickname="来电pro"
+          href=""
+          data-miniprogram-type="text"
+          data-miniprogram-servicetype=""
+        >
+          xxx
+        </a>
       </div>
     );
   }
