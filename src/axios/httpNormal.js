@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //禁止使用
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = false;
 axios.interceptors.request.use(
   function (config) {    
     config.timeout = 30000;    
