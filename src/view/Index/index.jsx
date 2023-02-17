@@ -2,15 +2,29 @@ import { View } from "@keithwang/keith-core";
 
 import "./assets/index.scss";
 
+import httpHormal from "../../axios/httpNormal";
+
 class Index extends View {
   constructor(option) {
     super(option);
   }
 
-  handleDemo(item) {
-    // console.log(this.$app.$Router);
-    // this.$app.$Router.push({ url: item.url });
+  handleDemo() {
     document.location.href = "https://mall.11185.cn/h5/#/index";
+  }
+
+  handleDemo2() {
+    httpHormal({
+      url:
+        "https://demo.cangsg.com:8081/getWxConfigParams?url=" +
+        location.href.split("#")[0],
+      method: "get",
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+      },
+    }).then((res) => {
+      alert(JSON.stringify(res));
+    });
   }
 
   render() {
@@ -22,18 +36,12 @@ class Index extends View {
           value="1. 跳转其他公众号网页"
           onClick={() => this.handleDemo()}
         />
-        <a
-          className="weapp_text_link wx_tap_link"
-          style="font-size:17px;"
-          data-miniprogram-appid="wxc60292d1a49f32d3"
-          data-miniprogram-path="pages/index/index"
-          data-miniprogram-nickname="来电pro"
-          href=""
-          data-miniprogram-type="text"
-          data-miniprogram-servicetype=""
-        >
-          xxx
-        </a>
+        <input
+          className="demo-button"
+          type="button"
+          value="2. 跳转其他小程序"
+          onClick={() => this.handleDemo2()}
+        />
       </div>
     );
   }
