@@ -6,8 +6,8 @@
   "scripts": {
     "buildDev": "node webpack/run.js --dev --build",
     "buildProd": "node webpack/run.js --prod --build",
-    "start": "node webpack/run.js --dev --start",
-    "startProd": "node webpack/run.js --prodTest --start"
+    "start": "node webpack/run.js --dev --start --https",
+    "startProd": "node webpack/run.js --prod --start --https"
   },
   "author": "KeithWang",
   "license": "MIT",

@@ -1,5 +1,7 @@
 "use strict";
 
 module.exports = {
-  NODE_ENV: '"production"'
+  NODE_ENV: '"production"',
+  demo_back_url: '"https://demo.cangsg.com/DemoRest/"',
+  demo_front_url: '"https://demo.cangsg.com/"',
 };

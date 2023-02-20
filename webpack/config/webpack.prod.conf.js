@@ -7,6 +7,13 @@ const config = require("./webpack.config.js");
 
 const webpackConfig = webpackMerge.merge(config, {
   mode: "production",
+  devServer: {
+    proxy: {
+      "/DemoRest": {
+        target: `https://demo.cangsg.com`,
+      },
+    },
+  },
   optimization: {
     minimize: true,
   },

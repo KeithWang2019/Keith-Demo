@@ -4,6 +4,7 @@ let colors = true;
 
 process.env.BABEL_ENV = "development";
 process.env.NODE_ENV = "development";
+let useHttps = false;
 console.log(process.argv);
 
 for (let arg of process.argv) {
@@ -27,6 +28,9 @@ for (let arg of process.argv) {
     case "--build":
       runStyle = "build";
       process.env.SEP_CSS = "sep";
+      break;
+    case "--https":
+      useHttps = true;
       break;
   }
 }
@@ -53,7 +57,12 @@ if (runStyle == "build") {
     });
     console.log(result);
   });
-} else {  
+} else {
+  if (useHttps) {    
+    config.devServer.port = 443;
+    config.devServer.https = true;
+  }
+
   const devServerOptions = { ...config.devServer, open: true };
 
   const server = new WebpackDevServer(devServerOptions, compiler);

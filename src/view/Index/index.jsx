@@ -16,7 +16,8 @@ class Index extends View {
   handleDemo2() {
     httpHormal({
       url:
-        "https://demo.cangsg.com:8081/getWxConfigParams?url=" +
+        process.env.demo_back_url +
+        "getWxConfigParams?url=" +
         location.href.split("#")[0],
       method: "get",
       headers: {

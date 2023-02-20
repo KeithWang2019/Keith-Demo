@@ -191,7 +191,7 @@ module.exports = {
   devServer: {
     static: rootPath.getPath("dist"),
     hot: true,
-    allowedHosts: ["0.0.0.0", "localhost"],
+    allowedHosts: ["0.0.0.0", "localhost", "demo.cangsg.com"],
     open: true,
     port: 80,
   },
